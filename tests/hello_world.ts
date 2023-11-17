@@ -1,16 +1,22 @@
 import * as anchor from "@coral-xyz/anchor";
 import { Program } from "@coral-xyz/anchor";
-import { HelloWorld } from "../target/types/hello_world";
+import { MinionToken } from "../target/types/MinionToken";
+import { TOKEN_PROGRAM_ID } from "@coral-xyz/anchor/dist/cjs/utils/token";
 
 describe("hello_world", () => {
-  // Configure the client to use the local cluster.
-  anchor.setProvider(anchor.AnchorProvider.env());
+	// Configure the client to use the local cluster.
+	anchor.setProvider(anchor.AnchorProvider.env());
 
-  const program = anchor.workspace.HelloWorld as Program<HelloWorld>;
+	const minion_program = anchor.workspace.MinionToken as Program<MinionToken>;
 
-  it("Is initialized!", async () => {
-    // Add your test here.
-    const tx = await program.methods.initialize().rpc();
-    console.log("Your transaction signature", tx);
-  });
+	it("Is initialized!", async () => {
+		// Add your test here.
+		const tx = await minion_program.methods.initToken({
+			name: "",
+			symbol: "",
+			uri: "",
+			decimals: 0,
+		});
+		console.log("Your transaction signature", tx);
+	});
 });

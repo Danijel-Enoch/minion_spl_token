@@ -1001,6 +1001,7 @@ dependencies = [
  "mpl-token-metadata",
  "solana-program",
  "spl-token",
+ "spl-token-2022",
 ]
 
 [[package]]

@@ -1,3 +1,7 @@
 {
-	"nuxt.isNuxtApp": false
+	"nuxt.isNuxtApp": false,
+	"rust-analyzer.linkedProjects": [
+		"./programs/hello_world/Cargo.toml",
+		"./programs/hello_world/Cargo.toml"
+	]
 }
